@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable prettier/prettier */
+
 import { Controller, Post, Body } from '@nestjs/common';
 import { MatchesService } from './matches.service';
 

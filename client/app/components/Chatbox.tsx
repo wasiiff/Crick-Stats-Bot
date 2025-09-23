@@ -17,7 +17,7 @@ export default function ChatBox() {
   >([]);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
-  // ✅ Use RTK Query mutation
+
   const [askQuestion, { isLoading }] = useAskQuestionMutation();
 
   const scrollToBottom = () => {
@@ -142,10 +142,8 @@ export default function ChatBox() {
   };
 
   const quickQuestions = [
-    "Show top 10 ODI batsmen by average",
+    "Show top 10 ODI Teams by average",
     "Latest Test match results",
-    "Current ICC rankings",
-    "Top wicket takers in T20I",
   ];
 
   return (
@@ -266,7 +264,7 @@ export default function ChatBox() {
                 if (e.key === "Enter" && !isLoading) send();
               }}
               className="flex-1 border border-gray-300 px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm placeholder-gray-500 bg-gray-50 focus:bg-white transition-all duration-200"
-              placeholder="Ask about cricket stats (e.g., 'Show Virat Kohli's career statistics', 'Top 5 Test bowling figures')"
+              placeholder="Ask about cricket stats (e.g., 'Top 5 Test Matches')"
               disabled={isLoading}
             />
             <button
@@ -292,7 +290,7 @@ export default function ChatBox() {
             Powered by Live Cricket Data API • Updated Every Minute
           </p>
           <p className="text-xs text-gray-500">
-            Get real-time scores, player statistics, rankings, and historical
+            Get real-time scores and historical
             records
           </p>
         </div>
