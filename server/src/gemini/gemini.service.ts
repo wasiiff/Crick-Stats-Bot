@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { config } from 'dotenv';
 import {
@@ -16,7 +18,7 @@ export class GeminiService {
   constructor() {
     const apiKey = process.env.GEMINI_API_KEY || '';
     if (!apiKey) {
-      throw new Error('❌ GEMINI_API_KEY not found in .env');
+      throw new Error('GEMINI_API_KEY not found in .env');
     }
 
     this.client = new GoogleGenerativeAI(apiKey);
