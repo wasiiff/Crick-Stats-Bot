@@ -92,7 +92,7 @@ Return ONLY valid JSON in this format:
 \`\`\`
 
 ## RULES
-- Match format → detect keywords ("test", "odi", "t20") else use formatHint or "all".
+- Match format → detect keywords ("test", "odi", "t20") else use formatHint or "all" if two or more formats are given use all.
 - Team/venue → case-insensitive regex (e.g. { "team": { "$regex": "India", "$options": "i" } }).
 - Dates → use startDate with $gte/$lte for years, ranges, or "recent".
 - Scores → **always wrap in $convert with onError:null, onNull:null**:
@@ -105,7 +105,7 @@ Return ONLY valid JSON in this format:
     }
   }
 - Results → regex (e.g. { "result": { "$regex": "^Won", "$options": "i" } }).
-- Rankings ("highest", "top") → sort desc + limit.
+- Rankings ("highest", "top" , "highest ever runs", "highest ever score" ) → sort desc + limit.
 - Recent/oldest → sort by startDate desc/asc + limit.
 - Head-to-head → $or with both team/opposition pairs.
 - Aggregations allowed in "agg" (group, avg, sum, max).

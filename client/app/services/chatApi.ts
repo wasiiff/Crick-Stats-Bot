@@ -6,7 +6,7 @@ export const chatApi = createApi({
   reducerPath: "chatApi",
   baseQuery: fetchBaseQuery({ baseUrl: API_BASE }),
   endpoints: (builder) => ({
-    askQuestion: builder.mutation<any, { question: string }>({
+    askQuestion: builder.mutation<unknown, { question: string }>({
       query: ({ question }) => ({
         url: "/ask",
         method: "POST",
